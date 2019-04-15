@@ -1,0 +1,73 @@
+.ol-popup {
+  position: absolute;
+  background-color: white;
+  -webkit-filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.2));
+  border: 1px solid #cccccc;
+  bottom: 12px;
+  left: -225px;
+  width: 450px;
+}
+.ol-popup:after,
+.ol-popup:before {
+  top: 100%;
+  border: solid transparent;
+  content: ' ';
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.ol-popup:after {
+  border-top-color: white;
+  border-width: 10px;
+  left: 50%;
+  margin-left: -10px;
+}
+.ol-popup:before {
+  border-top-color: #cccccc;
+  border-width: 11px;
+  left: 50%;
+  margin-left: -11px;
+}
+.ol-popup-closer {
+  text-decoration: none;
+  position: absolute;
+  top: 2px;
+  right: 8px;
+}
+.ol-popup-closer:after {
+  content: '✖';
+}
+.titleStyle {
+  height: 40px;
+  line-height: 40px;
+  padding-left: 20px;
+}
+.bodyStyle {
+  height: auto;
+  background: #fff;
+  margin: 0px 30px;
+  overflow: hidden;
+}
+.bodyStyle ul li {
+  float: left;
+  width: 170px;
+  list-style: none;
+  margin: 5px 12px;
+}
+.footButton {
+  width: 80px;
+  height: 30px;
+  outline: none;
+  background: white;
+  color: #21aa93;
+  border: 1px solid #21aa93;
+  border-radius: 5px;
+  margin: 0 15px;
+  cursor: pointer;
+}
+.footButton:active {
+  background: #21aa93;
+  color: white;
+}

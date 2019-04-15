@@ -1,0 +1,93 @@
+<div style="position: absolute" [style.width]="config.openStyle.size.width"
+  [style.height]="config.openStyle.size.height" 
+  [style.top]="config.openStyle.position.top"
+  [style.left]="config.openStyle.position.left" 
+  [style.right]="config.openStyle.position.right"
+  [style.bottom]="config.openStyle.position.bottom"
+  (click)="vanish()" [ngStyle]="{
+  display: hide === true ? 'none' : 'block'
+}">
+  <img src="{{config.openStyle.openImage}}" style="width: 100%;" />
+</div>
+<div [ngStyle]="{
+  display: hide === false ? 'none' : 'block'
+}">
+  <div (mouseenter)="mouseenter()" (mouseleave)="mouseleave()" style="position: absolute;padding: 0px;"
+  [style.top]="config.openStyle.position.top"
+  [style.left]="config.openStyle.position.left" 
+  [style.right]="config.openStyle.position.right"
+  [style.bottom]="config.openStyle.position.bottom">
+    <div (click)="show()" style="width: 20px;  position: relative;  top: 5px;  right: 5px;  float: right;" [ngStyle]="{
+    display: flag === false ? 'none' : 'block'
+  }">
+      <img src="{{config.closeStyle.closeImage}}" style="width: 100%;" />
+    </div>
+    <div style="padding: 0px;" [style.background]="config.background" [style.width]="config.size.width"
+      [style.height]="config.size.height">
+      <div [style.border]="config.border">
+        <div style="margin: 10px;" [style.border-bottom]="config.border" [style.color]="config.gradestyle.color">
+          {{config.title}}
+        </div>
+        <!-- colorType -->
+        <div style="margin: 10px;" [ngStyle]="{
+          display: config.datas0[0].visible === 'false' ? 'none' : 'block'
+        }">
+          <p [style.color]="config.datas0[0].titleStyle.color">{{config.datas0[0].title}}</p>
+          <div *ngFor="let item of config.datas0[0].data; let i = index" style="margin-bottom: 10px;"
+            [style.height]="config.gradestyle.height" [style.line-height]="config.gradestyle.height">
+            <div style="border-radius: 5px;float: left;margin-right: 20px;" [style.background]="item.value"
+              [style.height]="config.gradestyle.height" [style.width]="config.gradestyle.width"></div>
+            <div [style.color]="config.datas1[0].color" [style.height]="config.gradestyle.height">{{item.name}}</div>
+          </div>
+        </div>
+        <!-- colorNum -->
+        <div style="margin: 10px;"
+        [ngStyle]="{
+          display: config.datas1[0].visible === 'false' ? 'none' : 'block'
+        }">
+          <p [style.color]="config.datas1[0].titleStyle.color">{{config.datas1[0].title}}</p>
+          <div style="margin-bottom: 10px;display: flex;" [style.height]="config.numberstyle.height"
+            [style.line-height]="config.numberstyle.height">
+            <span *ngFor="let item of config.datas1[0].data; let i = index" style="border-radius: 5px;float: left;"
+              [style.background]="item.value" [style.width]="config.numberstyle.width"
+              [style.height]="config.numberstyle.height"></span>
+          </div>
+          <div style="margin-bottom: 10px; display: flex;" [style.height]="config.numberstyle.height"
+            [style.line-height]="config.numberstyle.height">
+            <span *ngFor="let item of config.datas1[0].data; let i = index" style="  float: left; text-align: left"
+              [style.color]="config.datas1[0].color" [style.width]="config.numberstyle.width"
+              [style.line-height]="config.numberstyle.height">{{item.name}}</span>
+          </div>
+        </div>
+        <!-- iconType -->
+        <div style="margin: 10px; overflow: hidden;"
+        [ngStyle]="{
+          display: config.datas2[0].visible === 'false' ? 'none' : 'block'
+        }">
+          <p [style.color]="config.datas1[0].titleStyle.color">{{config.datas2[0].title}}</p>
+          <div style="width: 50%; float: left;">
+            <div *ngFor="let item of config.datas2[0].data; let i = index" style="margin-bottom: 10px; float: left;"
+              [style.height]="config.Iconstyle.height" [style.line-height]="config.Iconstyle.height">
+              <span style=" float: left;"  [style.height]="config.Iconstyle.height" [style.width]="config.Iconstyle.width"> <img src="{{item.src}}"
+                  style="width: 100%;" /></span>
+              <span style="  float: left; text-align: center" [style.color]="config.datas1[0].color"
+                [style.width]="config.Iconstyle.width"
+                [style.line-height]="config.Iconstyle.height">{{item.name}}</span>
+            </div>
+          </div>
+          <div style="width: 50%; float: left;">
+            <div *ngFor="let item of config.datas2[0].data; let i = index" style="margin-bottom: 10px; float: left;"
+              [style.height]="config.Iconstyle.height" [style.line-height]="config.Iconstyle.height">
+              <span style=" float: left;"  [style.height]="config.Iconstyle.height" [style.width]="config.Iconstyle.width"> <img src="{{item.src}}"
+                  style="width: 100%;" /></span>
+              <span style="  float: left; text-align: center" [style.color]="config.datas1[0].color"
+                [style.width]="config.Iconstyle.width"
+                [style.line-height]="config.Iconstyle.height">{{item.name}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

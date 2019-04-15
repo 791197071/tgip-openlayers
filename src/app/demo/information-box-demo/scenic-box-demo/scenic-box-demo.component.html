@@ -1,0 +1,9 @@
+<tgip-ol-map [config]="mapConfig" #myMap></tgip-ol-map>
+<tgip-ol-point-layer
+  [map]="myMap"
+  [data]="myPointData"
+  [style]="pointStyle"
+  [config]="pointConfig"
+>
+</tgip-ol-point-layer>
+<tgip-ol-scenic-box [map]="myMap.map"  [config]="informationConfig" [sw]="swiper"></tgip-ol-scenic-box>

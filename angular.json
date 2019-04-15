@@ -1,0 +1,395 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "tgip-ng-client": {
+      "root": "",
+      "sourceRoot": "src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/tgip-ng-client",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css",
+              "./node_modules/swiper/dist/css/swiper.min.css"
+            ],
+            "scripts": [
+              "./node_modules/swiper/dist/js/swiper.min.js"          
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            },
+            "hmr": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.hmr.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "tgip-ng-client:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "tgip-ng-client:build:production"
+            },
+            "hmr": {
+              "hmr": true,
+              "browserTarget": "tgip-ng-client:build:hmr"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "tgip-ng-client:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.spec.json",
+            "karmaConfig": "src/karma.conf.js",
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "src/tsconfig.app.json",
+              "src/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "tgip-ng-client-e2e": {
+      "root": "e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "tgip-ng-client:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "tgip-ng-client:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "tgip-restful": {
+      "root": "projects/tgip-restful",
+      "sourceRoot": "projects/tgip-restful/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/tgip-restful/tsconfig.lib.json",
+            "project": "projects/tgip-restful/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/tgip-restful/src/test.ts",
+            "tsConfig": "projects/tgip-restful/tsconfig.spec.json",
+            "karmaConfig": "projects/tgip-restful/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/tgip-restful/tsconfig.lib.json",
+              "projects/tgip-restful/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "tgip-business": {
+      "root": "projects/tgip-business",
+      "sourceRoot": "projects/tgip-business/src",
+      "projectType": "library",
+      "prefix": "tgip",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/tgip-business/tsconfig.lib.json",
+            "project": "projects/tgip-business/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/tgip-business/src/test.ts",
+            "tsConfig": "projects/tgip-business/tsconfig.spec.json",
+            "karmaConfig": "projects/tgip-business/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/tgip-business/tsconfig.lib.json",
+              "projects/tgip-business/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "tgip-common": {
+      "root": "projects/tgip-common",
+      "sourceRoot": "projects/tgip-common/src",
+      "projectType": "library",
+      "prefix": "tgip",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/tgip-common/tsconfig.lib.json",
+            "project": "projects/tgip-common/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/tgip-common/src/test.ts",
+            "tsConfig": "projects/tgip-common/tsconfig.spec.json",
+            "karmaConfig": "projects/tgip-common/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/tgip-common/tsconfig.lib.json",
+              "projects/tgip-common/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "tgip-mapbox": {
+      "root": "projects/tgip-mapbox",
+      "sourceRoot": "projects/tgip-mapbox/src",
+      "projectType": "library",
+      "prefix": "tgip-mb",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/tgip-mapbox/tsconfig.lib.json",
+            "project": "projects/tgip-mapbox/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/tgip-mapbox/src/test.ts",
+            "tsConfig": "projects/tgip-mapbox/tsconfig.spec.json",
+            "karmaConfig": "projects/tgip-mapbox/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/tgip-mapbox/tsconfig.lib.json",
+              "projects/tgip-mapbox/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "tgip-openlayers": {
+      "root": "projects/tgip-openlayers",
+      "sourceRoot": "projects/tgip-openlayers/src",
+      "projectType": "library",
+      "prefix": "tgip-ol",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/tgip-openlayers/tsconfig.lib.json",
+            "project": "projects/tgip-openlayers/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/tgip-openlayers/src/test.ts",
+            "tsConfig": "projects/tgip-openlayers/tsconfig.spec.json",
+            "karmaConfig": "projects/tgip-openlayers/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/tgip-openlayers/tsconfig.lib.json",
+              "projects/tgip-openlayers/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "tgip-layer": {
+      "root": "projects/tgip-layer",
+      "sourceRoot": "projects/tgip-layer/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/tgip-layer/tsconfig.lib.json",
+            "project": "projects/tgip-layer/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/tgip-layer/src/test.ts",
+            "tsConfig": "projects/tgip-layer/tsconfig.spec.json",
+            "karmaConfig": "projects/tgip-layer/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/tgip-layer/tsconfig.lib.json",
+              "projects/tgip-layer/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "layer": {
+      "root": "projects/layer",
+      "sourceRoot": "projects/layer/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/layer/tsconfig.lib.json",
+            "project": "projects/layer/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/layer/src/test.ts",
+            "tsConfig": "projects/layer/tsconfig.spec.json",
+            "karmaConfig": "projects/layer/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/layer/tsconfig.lib.json",
+              "projects/layer/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "tgip-ng-client"
+}

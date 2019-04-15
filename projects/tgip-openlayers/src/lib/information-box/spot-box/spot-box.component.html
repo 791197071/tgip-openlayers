@@ -1,0 +1,30 @@
+<div id="popup" class="ol-popup">
+  <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+  <div id="popup-content">
+    <div>
+      <div
+        class="titleStyle"
+        [style.background]="config.titleStyle.background"
+        [style.color]="config.titleStyle.color"
+        [style.font-size]="config.titleStyle.fontSize"
+      >
+        {{ config.title }}
+      </div>
+      <div class="bodyStyle">
+        <ul
+          style=" padding: 0;width: 100%; height: 100%; overflow: hidden;"
+          [style.color]="config.dataStyle.color"
+          [style.font-size]="config.dataStyle.fontSize"
+        >
+          <li *ngFor="let item of config.data">
+            {{ item.name }}
+          </li>
+        </ul>
+      </div>
+      <div style=" width: 220px;margin: 0 auto;margin-bottom: 15px;">
+        <button class="footButton">当日轨迹</button>
+        <button class="footButton">发送消息</button>
+      </div>
+    </div>
+  </div>
+</div>

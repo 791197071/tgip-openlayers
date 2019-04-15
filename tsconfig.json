@@ -1,0 +1,34 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es2015",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es5",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2018", "dom"],
+    "paths": {
+      "*": ["types/*"],
+      "tgip-restful": ["dist/tgip-restful"],
+      "tgip-restful/*": ["dist/tgip-restful/*"],
+      "tgip-business": ["dist/tgip-business"],
+      "tgip-business/*": ["dist/tgip-business/*"],
+      "tgip-common": ["dist/tgip-common"],
+      "tgip-common/*": ["dist/tgip-common/*"],
+      "tgip-mapbox": ["dist/tgip-mapbox"],
+      "tgip-mapbox/*": ["dist/tgip-mapbox/*"],
+      "tgip-openlayers": ["dist/tgip-openlayers"],
+      "tgip-openlayers/*": ["dist/tgip-openlayers/*"],
+      "tgip-layer": ["dist/tgip-layer"],
+      "tgip-layer/*": ["dist/tgip-layer/*"],
+      "layer": ["dist/layer"],
+      "layer/*": ["dist/layer/*"]
+    }
+  }
+}

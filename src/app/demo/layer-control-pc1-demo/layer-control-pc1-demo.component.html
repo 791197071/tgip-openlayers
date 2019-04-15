@@ -1,0 +1,21 @@
+<tgip-ol-map [config]="mapConfig" #myMap></tgip-ol-map>
+<tgip-ol-layer-control-pc1
+  [config]="config"
+  (outer)="runParent($event)"
+></tgip-ol-layer-control-pc1>
+<tgip-ol-point-layer
+  #pointlayer
+  [map]="myMap"
+  [data]="myPointData"
+  [style]="pointStyle"
+  [config]="pointConfig"
+  [visible]="config.layers[0].visible"
+></tgip-ol-point-layer>
+<tgip-ol-line-layer
+  #linelayer
+  [map]="myMap"
+  [data]="myLineData"
+  [style]="lineStyle"
+  [config]="lineConfig"
+  [visible]="config.layers[1].visible"
+></tgip-ol-line-layer>

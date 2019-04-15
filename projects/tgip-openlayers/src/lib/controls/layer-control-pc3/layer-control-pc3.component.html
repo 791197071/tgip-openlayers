@@ -1,0 +1,154 @@
+<div
+  class="imgbox"
+  style="position:absolute;overflow: hidden;"
+  [style.top]="config.position.top"
+  [style.right]="config.position.right"
+  [style.width]="config.size.width"
+  [style.height]="config.size.height"
+  (click)="show()"
+  [ngStyle]="{
+    display: hide === true ? 'none' : 'block'
+  }"
+>
+  <svg>
+    <image
+      id="image0"
+      width="50"
+      height="50"
+      x="0"
+      y="0"
+      href="data:image/png;base64,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
+m50AAAAASUVORK5CYII="
+    />
+  </svg>
+</div>
+
+<div
+  class="cmenu"
+  style="position:absolute;"
+  [style.top]="config.cmenuPosition.top"
+  [style.right]="config.cmenuPosition.right"
+  [ngStyle]="{
+    display: hide === false ? 'none' : 'block'
+  }"
+>
+  <div
+    class="cmenu-top"
+    [style.top]="config.cmenutop.top"
+    [style.right]="config.cmenutop.right"
+    [style.background]="config.cmenutop.background"
+    [style.border]="config.cmenutop.border"
+    [style.width]="config.cmenutop.width"
+    [style.height]="config.cmenutop.height"
+    [style.border-bottom]="config.cmenutop.borderbottom"
+    style="position: absolute; border-radius: 5px 5px 0 0;
+    z-index: 2;cursor: pointer;"
+    (click)="vanish()"
+  >
+    <span
+      [style.background]="config.cmenutop.backgroundImg"
+      [style.background-repeat]="config.cmenutop.backgroundrepeat"
+      [style.background-position]="config.cmenutop.backgroundposition"
+      [style.width]="config.cmenutop.width"
+      [style.height]="config.cmenutop.height"
+      style="display: block;"
+    ></span>
+  </div>
+  <div
+    class="cmenu-body"
+    style=" overflow: hidden; overflow-y: auto;"
+    [style.width]="config.cmenubody.width"
+    [style.max-height]="config.cmenubody.height"
+    [style.border]="config.cmenubody.border"
+    [style.border-radius]="config.cmenubody.borderradius"
+    [style.border-bottom]="config.cmenubody.borderbottom"
+    [style.background]="config.cmenubody.background"
+  >
+    <div>
+      <div
+        *ngFor="let item of config.layers"
+        style="display: flex; justify-content: space-between; margin: 10px 0px; list-style: none;overflow: hidden; "
+        (click)="showitem(item)"
+      >
+        <i
+          [style.width]="config.singleSize.width"
+          [style.height]="config.singleSize.height"
+          [style.background]="item.src"
+          [style.background-size]="config.background.backgroundsize"
+          style=" float: left; padding: 5px 5px; margin: 0 10px;"
+        ></i>
+        <span
+          style=" float: left; padding: 5px 5px; overflow: hidden;"
+          [style.line-height]="config.singleSize.height"
+          [style.font-size]="config.fontStyle.fontSize"
+          [style.width]="config.fontStyle.width"
+        >
+          {{ item.title }}</span
+        >
+        <span
+          style=" float: left;margin: 5px; cursor: pointer;background-size: 70% 70%;"
+          [ngStyle]="{
+            'background-image':
+              item.visible === true ? config.select.src : config.unselect.src,
+              'background-repeat':
+              item.visible === true ? config.bgStyle.backgroundrepeat : config.bgStyle.backgroundrepeat,
+              'background-position':
+              item.visible === true ? config.bgStyle.backgroundposition : config.bgStyle.backgroundposition,
+              'background-size':
+              item.visible === true ? config.bgStyle.backgroundsize : config.bgStyle.backgroundsize
+          }"
+          [style.width]="config.select.width"
+          [style.height]="config.select.height"
+        >
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    style=" border: 1px solid #005ab4;  border-radius: 0px 0px 5px 5px;  border-top: none;  height: 50px; background: white;"
+  >
+    <div
+      class="all"
+      (click)="allitem()"
+      [ngStyle]="{
+        display: flag === true ? 'none' : 'block'
+      }"
+    >
+      全选
+    </div>
+    <div
+      class="all"
+      (click)="cancelitem()"
+      [ngStyle]="{
+        display: flag === false ? 'none' : 'block'
+      }"
+    >
+      取消全选
+    </div>
+  </div>
+</div>

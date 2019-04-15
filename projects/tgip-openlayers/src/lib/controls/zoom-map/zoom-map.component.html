@@ -1,0 +1,76 @@
+<div
+  class="zoomMap"
+  [style.bottom]="config.position.bottom"
+  [style.right]="config.position.right"
+>
+  <span
+    class="maxZoom"
+    (click)="changeZoom(1)"
+    [ngStyle]="{
+      'background-image':
+        config.zoomIn.visible === true
+          ? config.zoomIn.enable
+          : config.zoomIn.disable,
+      'background-repeat':
+        config.zoomIn.visible === true
+          ? config.bgStyle.backgroundrepeat
+          : config.bgStyle.backgroundrepeat,
+      'background-position':
+        config.zoomIn.visible === true
+          ? config.bgStyle.backgroundposition
+          : config.bgStyle.backgroundposition,
+      'background-size':
+        config.zoomIn.visible === true
+          ? config.bgStyle.backgroundsize
+          : config.bgStyle.backgroundsize,
+      border:
+        config.zoomIn.visible === true
+          ? config.border.zoomIn
+          : config.border.disable,
+      cursor:
+        config.zoomIn.visible === true
+          ? config.border.cursor
+          : config.border.uncursor
+    }"
+    [style.width]="config.size.width"
+    [style.height]="config.size.height"
+    [style.line-height]="config.size.height"
+    [style.border]="config.border.zoomIn"
+    [style.border-radius]="config.border.radius"
+  ></span>
+  <span
+    class="minZoom"
+    (click)="changeZoom(-1)"
+    [ngStyle]="{
+      'background-image':
+        config.zoomOut.visible === true
+          ? config.zoomOut.enable
+          : config.zoomOut.disable,
+      'background-repeat':
+        config.zoomOut.visible === true
+          ? config.bgStyle.backgroundrepeat
+          : config.bgStyle.backgroundrepeat,
+      'background-position':
+        config.zoomOut.visible === true
+          ? config.bgStyle.backgroundposition
+          : config.bgStyle.backgroundposition,
+      'background-size':
+        config.zoomOut.visible === true
+          ? config.bgStyle.backgroundsize
+          : config.bgStyle.backgroundsize,
+      border:
+        config.zoomOut.visible === true
+          ? config.border.zoomOut
+          : config.border.disable,
+      cursor:
+        config.zoomOut.visible === true
+          ? config.border.cursor
+          : config.border.uncursor
+    }"
+    [style.width]="config.size.width"
+    [style.height]="config.size.height"
+    [style.line-height]="config.size.height"
+    [style.border]="config.border.zoomOut"
+    [style.border-radius]="config.border.radius"
+  ></span>
+</div>

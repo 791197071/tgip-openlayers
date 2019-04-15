@@ -1,0 +1,92 @@
+#mapType-wrapper {
+    position: absolute;
+    bottom: 100px;
+    right: 0px;
+    z-index: 1;
+}
+#mapType {
+    height: 100px;
+    width: auto;
+    cursor: pointer;
+    background-color: red;
+}
+#mapType .normal {
+    z-index: 1;
+    background-position: 0 0;
+    right: 20px;
+}
+
+#mapType .mapTypeCard {
+    height: 60px;
+    width: 86px;    
+    position: absolute;
+    border-radius: 2px;    
+    top: 10px;
+    box-sizing: border-box;
+    border: 1px solid rgba(153,153,153,.42);
+    background: url(//webmap1.bdimg.com/wolfman/static/common/images/new/shadow_6bf0ecd.png) no-repeat 0 0;
+    background-size: 86px 240px;
+
+}
+#mapType .mapTypeCard.active {
+    border: 1px solid #3385FF;
+}
+#mapType .mapTypeCard:hover {
+    border: 1px solid #3385FF;
+}
+#mapType .mapTypeCard.active span, #mapType .mapTypeCard:hover span {
+    background-color: #3385FF;
+}
+#mapType .switch-box {
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    line-height: 22px;
+    color: #fff;
+    background: rgba(0,0,0,.5);
+}
+#mapType .normal .switch-box p {
+    margin-left: 20px;
+}
+
+#mapType .switch-box p {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+
+#mapType .mapTypeCard span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: inline-block;
+    padding: 3px 3px 2px 4px;
+    font-size: 12px;
+    height: 12px;
+    line-height: 12px;
+    color: #FFF;
+    border-top-left-radius: 2px;
+}
+#mapType .mapTypeCard {
+    /* border: 1px solid rgba(255,255,255,0); */
+    background-image: url(//webmap1.bdimg.com/wolfman/static/common/images/new/maptype_8a68f95.png);
+}
+
+#mapType .normal {
+    z-index: 1;
+    background-position: 0 0;
+    right: 202px;
+}
+#mapType .earth {
+    background-position: 0 -181px;
+    right: 106px;
+}
+#mapType .panorama {
+    z-index: 3;
+    right: 10px;
+    background-image: url(//webmap1.bdimg.com/wolfman/static/common/images/new/maptype_8a68f95.png);
+    background-position: 0 -121px;
+    border-left: 1px solid rgba(153,153,153,.6);
+}
+/* *********************** */

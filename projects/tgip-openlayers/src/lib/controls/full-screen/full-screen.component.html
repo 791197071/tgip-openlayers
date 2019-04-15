@@ -1,0 +1,9 @@
+<button (click)="fullscreenToggle()" 
+[style.width]="config.size.width" 
+[style.height]="config.size.height"
+[style.top]="config.position.top"
+[style.right]="config.position.right"
+style="position:absolute;"
+[style.background]="config.fullscreen.icon"
+[class]="config.className"
+>全屏</button>

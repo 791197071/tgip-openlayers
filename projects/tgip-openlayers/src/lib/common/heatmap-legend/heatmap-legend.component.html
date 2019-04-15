@@ -1,0 +1,13 @@
+<div style="position: absolute;" [style.display]="config.visible" [style.top]="config.position.top"
+  [style.left]="config.position.left" [style.right]="config.position.right" [style.bottom]="config.position.bottom">
+
+  <div style="display: flex;">
+    <div *ngFor="let item of config.datas; let i = index">
+      <div style="border: 2px solid #fff; text-align: center" [style.background]="item.background"
+        [style.width]="config.size.width" [style.line-height]="config.size.height" [style.height]="config.size.height"
+        [style.color]="config.color">
+        {{item.title}}</div>
+    </div>
+  </div>
+
+</div>

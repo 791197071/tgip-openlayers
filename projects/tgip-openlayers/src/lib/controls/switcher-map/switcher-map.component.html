@@ -1,0 +1,50 @@
+<div
+  id="mapType-wrapper"
+  style="position:absolute; z-index: 1;"
+  [style.bottom]="config.position.bottom"
+  [style.right]="config.position.right"
+>
+  <div
+    [style.width]="config.size.width"
+    [style.height]="config.size.height"
+    [style.background]="config.size.background"
+    (mouseenter)="mouseenter()"
+    (mouseleave)="mouseleave()"
+  >
+    <div
+      [style.background]="item.src"
+      [style.background-size]="config.backgroundSize.backgroundSize"
+      style="float:left;background-size: 100% 100%; margin: 10px 10px; position: relative;border: 1px solid;"
+      *ngFor="let item of config.baseMap; let i = index"
+      [style.width]="config.imgSize.width"
+      [ngStyle]="{
+        border:
+          item.visible === false
+            ? config.unselectFontBgColor.border
+            : config.selectFontBgColor.border,
+        display: item.isdisplay === true ? 'block' : 'none'
+      }"
+      (click)="fullscreenToggle(item)"
+      [style.height]="config.imgSize.height"
+    >
+      <span
+        style="position: absolute;
+      display: inline-block;
+      padding: 3px 3px 2px 4px;   
+      border-top-left-radius: 2px;"
+        [style.bottom]="config.fontStyle.bottom"
+        [style.right]="config.fontStyle.right"
+        [style.color]="config.fontStyle.color"
+        [style.font-size]="config.fontStyle.fontSize"
+        [ngStyle]="{
+          background:
+            item.visible === false
+              ? config.unselectFontBgColor.bg
+              : config.selectFontBgColor.bg
+        }"
+      >
+        {{ item.title }}</span
+      >
+    </div>
+  </div>
+</div>

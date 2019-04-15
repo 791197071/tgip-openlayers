@@ -1,0 +1,49 @@
+<div id="popup" class="ol-popup" [style.background]="config.background">
+  <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+  <div>
+    <div class="swiper-container" [swiper]="mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngFor="let item of config.data">
+          <img src="{{ item.src }}" class="poimg" />
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+    <div>
+      <p
+        [style.color]="config.titleStyle.color"
+        [style.font-size]="config.titleStyle.fontSize"
+      >
+        {{ config.title }}
+      </p>
+      <p
+        class="starLevel"
+        [style.width]="config.starLevel.width"
+        [style.background]="config.starLevel.background"
+        [ngStyle]="{
+          display: config.showGrade === 'false' ? 'none' : 'block'
+        }"
+      >
+        {{ config.starLevel.name }}
+      </p>
+      <div
+        [ngStyle]="{
+          display: config.showDetails === 'false' ? 'none' : 'block'
+        }"
+      >
+        <div
+          style="display: flex; margin: 10px 0px;"
+          [style.color]="config.detailsStyle.color"
+          [style.font-size]="config.detailsStyle.fontSize"
+          *ngFor="let item of config.data1"
+        >
+          <div class="listTitle">{{ item.name }}：</div>
+          <div class="listgrade">{{ item.value }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="popup-content"></div>
+</div>

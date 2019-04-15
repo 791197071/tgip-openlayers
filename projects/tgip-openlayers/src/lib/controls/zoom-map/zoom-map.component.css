@@ -1,0 +1,12 @@
+.zoomMap{
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+}
+.zoomMap span{
+    display: block;
+    text-align: center;
+}
+.maxZoom{
+    margin-bottom: 10px;    
+}
