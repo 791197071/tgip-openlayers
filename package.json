@@ -67,14 +67,5 @@
 		"tslib": "^1.9.0",
 		"tslint": "~5.11.0",
 		"typescript": "~3.2.2"
-	},
-	"svnOptions": {
-		"username": "hmnpm",
-		"password": "npmuseonly",
-		"no-auth-cache": true
-	},
-	"svnDependencies": {
-		"handsmap-map-client@2.0.2": "https://dev.handsmap.com:2086/svn/npm/handsmap-map-client/",
-		"tgip-openlayers@2.0.1": "https://dev.handsmap.com:2086/svn/npm/tgip-openlayers/"
 	}
 }
