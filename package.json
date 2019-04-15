@@ -74,6 +74,7 @@
 		"no-auth-cache": true
 	},
 	"svnDependencies": {
-		"handsmap-map-client@2.0.2": "https://dev.handsmap.com:2086/svn/npm/handsmap-map-client/"
+		"handsmap-map-client@2.0.2": "https://dev.handsmap.com:2086/svn/npm/handsmap-map-client/",
+		"tgip-openlayers@2.0.1": "https://dev.handsmap.com:2086/svn/npm/tgip-openlayers/"
 	}
 }
